@@ -336,6 +336,7 @@ class ButtonFrame(wx.Frame,object):
                 ##获取well num
                 well_num = self.choice_n_w.GetStringSelection()
                 self.var_data = []
+                
                 for item in range(int(well_num)):
                     ##获取需要匹配的属性
                     var = self.varible.GetValue()
@@ -407,7 +408,7 @@ class ButtonFrame(wx.Frame,object):
             plt.show()
             #修改信息栏
             self.information_1.Remove(0, 200)
-            text = "\nDTW算法匹配结束！！！\n\n所选属性最为接近的是"+str(self.reslut[0][0])+'号井和'+str(self.reslut[0][1])+'号井'+'，结果已经画出!!!\n\n两者之间的相似度为'+str(self.reslut[0][2])+'\n\n其他匹配信息已经写入result.txt文件!!!'
+            text = "\nDTW算法匹配结束！！！\n\n所选属性最为接近的是"+str(self.reslut[0][0])+'号井和'+str(self.reslut[0][1])+'号井'+'，结果已经画出!!!\n\n两者之间的相似指数为'+str(self.reslut[0][2])+'\n\n其他匹配信息已经写入result.txt文件!!!'
             self.information_1.WriteText(text)
             #写入result文件
             now_time = datetime.datetime.now()
@@ -449,7 +450,7 @@ class ButtonFrame(wx.Frame,object):
             # 修改信息栏
             self.information_1.Remove(0, 200)
             text = "\nDTW算法匹配结束！！！\n\n所选属性最为接近的是" + str(self.reslut[0][0]) + '号井和' + str(
-                self.reslut[0][1]) + '号井' + '，结果已经画出!!!\n\n两者之间的相似度为' + str(
+                self.reslut[0][1]) + '号井' + '，结果已经画出!!!\n\n两者之间的相似指数为' + str(
                 self.reslut[0][2]) + '\n\n其他匹配信息已经写入result.txt文件!!!'
             self.information_1.WriteText(text)
             # 写入result文件
